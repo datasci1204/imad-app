@@ -9,18 +9,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article1', function (req, res) {
-
-  res.writeHead(200, {"Content-Type": "text/html"});
-  response.write("<html>");
-  response.write("<head>");
-  response.write("<title>Hello World Page</title>");
-  response.write("</head>");
-  response.write("<body>");
-  response.write("Hello World!");
-  response.write("</body>");
-  response.write("</html>");
-  response.end();
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'Article1.html'));
 });
 
 app.get('/ui/style.css', function (req, res) {
