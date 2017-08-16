@@ -11,6 +11,16 @@ app.get('/', function (req, res) {
 
 app.get('/article1', function (req, res) {
   res.send("Article one is requested");
+  res.writeHead(200, {"Content-Type": "text/html"});
+  response.write("<html>");
+  response.write("<head>");
+  response.write("<title>Hello World Page</title>");
+  response.write("</head>");
+  response.write("<body>");
+  response.write("Hello World!");
+  response.write("</body>");
+  response.write("</html>");
+  response.end();
 });
 
 app.get('/ui/style.css', function (req, res) {
