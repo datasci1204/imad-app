@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article1', function (req, res) {
-  res.send("Article one is requested");
+
   res.writeHead(200, {"Content-Type": "text/html"});
   response.write("<html>");
   response.write("<head>");
