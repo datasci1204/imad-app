@@ -37,9 +37,10 @@ app.get('/create-user', function (req, res) {
 });
 });
     
-
+var counter = 0;
 app.get('/login', function (req, res) {
-    res.send('User successfully created:');
+    counter = counter + 1;
+    res.send(counter.tostring());
     
 });
 
