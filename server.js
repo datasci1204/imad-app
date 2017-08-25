@@ -38,6 +38,7 @@ app.get('/create-user', function (req, res) {
     
 
 app.get('/login', function (req, res) {
+    res.send('Good');
     var username = req.body.username;
     var password = req.body.password;
     pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (req, result){
