@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var pool = new Pool(config);
+
 app.post('/create', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
@@ -34,6 +34,19 @@ app.post('/create', function (req, res) {
             res.send('User successfully created:' + username);
         }
 });
+});
+
+var pool = new Pool(config);
+app.get('/testdb', function(req, res){
+    pool.query('select * from "user"', function(req, result){
+      if(err){
+          res.status(500).send(err.toString());
+      } else {
+      res.send(JSON.stringify(result.rows));
+          
+      }
+      } 
+    );
 });
     
 var counter = 0;
