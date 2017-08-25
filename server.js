@@ -40,6 +40,7 @@ app.get('/create-user', function (req, res) {
 
 app.get('/login', function (req, res) {
     res.send('Good');
+    res.sendFile(path.join(__dirname, 'ui', 'Article1.html'));
     
 });
 
