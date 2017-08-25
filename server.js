@@ -17,7 +17,7 @@ var config = {
 var pool = new Pool(config);
 */
 
-const { Pool, Client } = require('pg')
+const { Pool, Client } = require('pg');
 
 const pool = new Pool({
   user: 'datasci1204',
@@ -25,7 +25,7 @@ const pool = new Pool({
   database: 'datasci1204',
   password: process.env.DB_PASSWORD,
   port: 5432,
-})
+});
 
 var app = express();
 app.use(morgan('combined'));
