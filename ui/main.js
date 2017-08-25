@@ -10,6 +10,7 @@ submit.onclick = function () {
     alert('Something went wrong on the sever2');
     console.log(username);
     request.open('POST', 'http://datasci1204.imad.hasura-app.io/login',true);
+    alert('Something went wrong on the sever2');
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
 
