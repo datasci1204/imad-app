@@ -40,8 +40,6 @@ app.get('/create-user', function (req, res) {
 
 app.get('/login', function (req, res) {
     res.send('User successfully created:');
-   alert('Test is fine');
-   console.log('Testing');
     
 });
 
