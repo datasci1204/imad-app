@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
 });
 
 var pool = new pool(config);
-app.get('/create', function (req, res) {
+app.post('/create', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
     pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (req, result){
