@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app/get('/create-user', function (req, res) {
+app.get('/create-user', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
     pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (req, result){
