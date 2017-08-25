@@ -75,6 +75,6 @@ var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
   request.open('POST', 'http://datasci1204.imad.hasura-app.io/create',true);
   request.setRequestHeader("Content-Type", "application/json");
-  request.send(JSON.stringify({username:"username", password:"password"}));
+  request.send(JSON.stringify({username: username, password: password}));
 
 };
