@@ -38,8 +38,8 @@ app.get('/create-user', function (req, res) {
 });
     
 
-app.get('/login', function (req, res) {
-    res.send('Good');
+app.POST('/login', function (req, res) {
+   
     res.sendFile(path.join(__dirname, 'ui', 'Article1.html'));
     
 });
