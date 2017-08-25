@@ -9,12 +9,12 @@ var config = {
    user: 'datasci1204',
    database: 'datasci1204',
    host: 'db.imad.hasura-app.io',
-   port: 5432,
+   port: '5432',
    password: process.env.DB_PASSWORD
     
 };
 
-var pool = new Pool(config);
+
 
 
 
@@ -25,7 +25,18 @@ app.use(bodyParser.json());
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-
+var pool = new Pool(config);
+app.get('/testdb', function(req, res){
+    pool.query('select * from "user"', function(req, result){
+      if(err){
+          res.status(500).send(err.toString());
+      } else {
+        res.send(JSON.stringify(result));
+          
+      }
+      } 
+    );
+});
 
 app.post('/create', function (req, res) {
     var username = req.body.username;
