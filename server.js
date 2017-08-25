@@ -23,7 +23,7 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 var pool = new Pool(config);
-app.get('/testdb', function(req, res){
+app.get('/testdb22', function(req, res){
     res.send('Test');
     pool.query('select * from "user"', function(req, result){
       if(err){
