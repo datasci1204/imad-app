@@ -35,6 +35,6 @@ request.send(null);
 
 request.open('POST', 'http://datasci1204.imad.hasura-app.io/create-user',true);
   request.setRequestHeader('Content-Type', 'application/json');
-  request.send(JSON.strinfigy({username: username, password: password}));
+  request.send(JSON.stringify({username: username, password: password}));
 
 };
