@@ -9,7 +9,7 @@ var config = {
    user: 'datasci1204',
    database: 'datasci1204',
    host: 'db.imad.hasura-app.io',
-   port: '5432',
+   port: 5432,
    password: process.env.DB_PASSWORD
     
 };
