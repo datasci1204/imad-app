@@ -30,6 +30,7 @@ app.get('/create-user', function (req, res) {
     pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (req, result){
         if(err) {
             res.status(500).send(err.toString());
+            res.send('Not able to connect');
         } else {
             res.send('User successfully created:' + username);
         }
