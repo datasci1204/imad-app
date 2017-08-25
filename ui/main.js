@@ -9,7 +9,7 @@ submit.onclick = function () {
     var password = document.getElementById('password').value;
     alert('Something went wrong on the sever2');
     console.log(username);
-    request.open('POST', 'http://datasci1204.imad.hasura-app.io/',true);
+    request.open('POST', 'http://datasci1204.imad.hasura-app.io/login',true);
     alert('Something went wrong on the sever3');
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(JSON.stringify({username: username, password: password}));
