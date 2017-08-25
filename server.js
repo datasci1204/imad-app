@@ -1,10 +1,10 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-/*var Pool = require('pg').Pool; */
+var Pool = require('pg').Pool; 
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
-/*
+
 var config = {
    user: 'datasci1204',
    database: 'datasci1204',
@@ -15,17 +15,8 @@ var config = {
 };
 
 var pool = new Pool(config);
-*/
 
-const { Pool, Client } = require('pg');
 
-const pool = new Pool({
-  user: 'datasci1204',
-  host: 'db.imad.hasura-app.io',
-  database: 'datasci1204',
-  password: process.env.DB_PASSWORD,
-  port: 5432,
-});
 
 var app = express();
 app.use(morgan('combined'));
