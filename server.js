@@ -6,8 +6,8 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser');
 
 var config = {
-   user: 'datasci1204',
-   database: 'datasci1204',
+   user: 'coco98',
+   database: 'coco98',
    host: 'db.imad.hasura-app.io',
    port: '5432',
    password: process.env.DB_PASSWORD
