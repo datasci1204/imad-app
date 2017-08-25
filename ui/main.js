@@ -22,7 +22,7 @@ submit.onclick = function () {
             } else if (request.status === 500) {
                 alert('Something went wrong on the sever');
             } else {
-                alert('Something went wrong on the sever3');
+                alert('User Created Successfully');
             
             }
         }
