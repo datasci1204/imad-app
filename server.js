@@ -9,7 +9,7 @@ var config = {
    user: 'datasci1204',
    database: 'datasci1204',
    host: 'db.imad.hasura-app.io',
-   post: '5432',
+   port: '5432',
    password: 'db-datasci1204-99885'
     
 };
@@ -42,7 +42,7 @@ app.get('/testdb', function(req, res){
       if(err){
           res.status(500).send(err.toString());
       } else {
-      res.send(JSON.stringify(result.rows));
+        res.send(JSON.stringify(result.rows));
           
       }
       } 
