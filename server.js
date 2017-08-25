@@ -13,7 +13,7 @@ var config = {
    password: process.env.DB_PASSWORD
     
 };
-
+var pool = new Pool(config);
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -36,7 +36,7 @@ app.post('/create', function (req, res) {
 });
 });
 
-var pool = new Pool(config);
+
 app.get('/testdb', function(req, res){
     pool.query('select * from "user"', function(req, result){
       if(err){
