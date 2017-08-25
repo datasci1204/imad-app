@@ -16,7 +16,8 @@ submit.onclick = function () {
         if (request.readyState === XMLHttpRequest.Done) {
             
             if (request.status === 200) {
-                alert('Logged in successfully')
+                var counter = request.responseText;
+                alert('Logged in successfully'+counter.toString());
             } else if (request.readyState === 403) {
                 alert('Username/password is incorrect');
             } else if (request.status === 500) {
