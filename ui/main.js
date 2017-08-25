@@ -1,8 +1,18 @@
 console.log('Loaded!');
 var submit = document.getElementById('submit_btn');
+
 submit.onclick = function () {
     alert('Something went wrong on the sever1');
     var request = new XMLHttpRequest();
+    
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    alert('Something went wrong on the sever2');
+    console.log(username);
+    request.open('GET', 'http://datasci1204.imad.hasura-app.io/login',true);
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(JSON.stringify({username: username, password: password}));
+
     
     request.onreadystatechange = function() {
         if (request.readyState === XMLHttpRequest.Done) {
@@ -18,12 +28,5 @@ submit.onclick = function () {
     };
 
 
-var username = document.getElementById('username').value;
-var password = document.getElementById('password').value;
-alert('Something went wrong on the sever2');
-console.log(username);
-request.open('GET', 'http://datasci1204.imad.hasura-app.io/login',true);
-request.setRequestHeader('Content-Type', 'application/json');
-request.send(JSON.stringify({username: username, password: password}));
 
 };
