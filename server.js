@@ -25,13 +25,13 @@ app.get('/', function (req, res) {
 var pool = new Pool(config);
 app.get('/testdb22', function(req, res){
     res.send('Test');
-    pool.query('select * from "user"', function(req, res){
+    pool.query('select * from "user"', function(req, result){
       if(err){
           res.status(500).send(err.toString());
           
       } else {
        /* res.send(JSON.stringify(r)); */
-        res.send(JSON.stringify({name:"John Rambo", time:"2pm"}));
+        res.send(JSON.stringify(result));
           
       }
       } 
