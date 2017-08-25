@@ -40,7 +40,7 @@ app.get('/create-user', function (req, res) {
 var counter = 0;
 app.get('/login', function (req, res) {
     counter = counter + 1;
-    res.send(counter.tostring());
+    res.send(counter.toString());
     
 });
 
