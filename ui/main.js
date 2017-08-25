@@ -24,6 +24,9 @@ submit.onclick = function () {
                 alert('Username/password is incorrect');
             } else if (request.status === 500) {
                 alert('Something went wrong on the sever');
+            } else {
+                alert('Something went wrong on the sever3');
+            
             }
         }
     };
