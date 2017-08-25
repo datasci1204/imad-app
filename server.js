@@ -22,6 +22,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+var pool = new pool(config);
+
 app.get('/create-user', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
