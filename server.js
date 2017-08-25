@@ -15,9 +15,6 @@ var config = {
 };
 
 
-
-
-
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
@@ -27,6 +24,7 @@ app.get('/', function (req, res) {
 });
 var pool = new Pool(config);
 app.get('/testdb', function(req, res){
+    res.send('Test');
     pool.query('select * from "user"', function(req, result){
       if(err){
           res.status(500).send(err.toString());
