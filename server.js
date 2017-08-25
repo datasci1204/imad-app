@@ -37,7 +37,7 @@ app.post('/create', function (req, res) {
 });
 
 
-app.get('/testdb', function(req, res){
+app.post('/testdb', function(req, res){
     pool.query('select * from "user"', function(req, result){
       if(err){
           res.status(500).send(err.toString());
