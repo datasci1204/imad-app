@@ -30,5 +30,5 @@ submit.onclick = function () {
     };
 
 request.open('GET', 'http://datasci1204.imad.hasura-app.io/login',true);
-request.send(null);
+/*request.send(null); */
 };
