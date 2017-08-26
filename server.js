@@ -25,7 +25,7 @@ app.get('/', function (req, res) {
 var pool = new Pool(config);
 app.get('/testdb22', function(req, res){
     res.send('Test');
-    pool.query('select * from "user" ', function(req, result){
+    pool.query('select * from "user" ', function(err, result){
       if(err){
           res.status(500).send(err.toString());
           res.send('check');
@@ -42,7 +42,7 @@ app.get('/testdb22', function(req, res){
 app.post('/create', function (req, res) {
     var username = req.body.username;
     var password = req.body.password;
-    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (req, result){
+    pool.query('INSERT INTO "user" (username, password) VALUES ($1, $2)', [username, password], function (err, result){
         if(err) {
             res.status(500).send(err.toString());
             res.send('Not able to connect');
@@ -54,7 +54,7 @@ app.post('/create', function (req, res) {
 
 var pool = new Pool(config);
 app.post('/testdb', function(req, res){
-    pool.query('select * from "user"', function(req, result){
+    pool.query('select * from "user"', function(err, result){
       if(err){
           res.status(500).send(err.toString());
       } else {
