@@ -37,7 +37,8 @@ request.send(null);
   console.log(password);
   request.open('POST', 'http://datasci1204.imad.hasura-app.io/testdb',true);
   request.setRequestHeader("Content-Type", "application/json");
-  request.send(JSON.stringify({username: username, password: password})); 
+  request.send(JSON.stringify({username: username, password: password}));
+
 
 };
 
