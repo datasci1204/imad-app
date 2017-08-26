@@ -30,8 +30,7 @@ app.get('/testdb22', function(req, res){
           res.status(500).send(err.toString());
           res.send('check');
       } else {
-       /* res.send(JSON.stringify(r)); */
-        console.log("result");
+       
         res.send(JSON.stringify(result));
           
       }
