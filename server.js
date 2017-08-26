@@ -31,6 +31,7 @@ app.get('/testdb22', function(req, res){
           
       } else {
        /* res.send(JSON.stringify(r)); */
+       console.log(result);
         res.send(JSON.stringify(result));
           
       }
