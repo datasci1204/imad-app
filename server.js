@@ -24,10 +24,9 @@ app.get('/', function (req, res) {
 });
 var pool = new Pool(config);
 app.get('/testdb22', function(req, res){
-    var u1 = req.body.username;
-    var p1 = req.body.password;
-    res.send(u1+p1);
-    pool.query('select * from "user" where username = ' + req.params.u1, function(err, result){
+
+    
+    pool.query('select * from "user" ' , function(err, result){
       
       if(err){
           res.status(500).send(err.toString());
