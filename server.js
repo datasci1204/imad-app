@@ -61,7 +61,7 @@ app.post('/create', function (req, res) {
 });
 });
 
-var pool = new Pool(config); 
+/*var pool = new Pool(config); */
 app.post('/testdb', function(req, res){
     var username = req.body.username;
     var password = req.body.password;
