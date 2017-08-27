@@ -71,7 +71,7 @@ app.post('/testdb', function(req, res){
       if(err){
           res.status(500).send(err.toString());
       } else {
-          if (result.rows.length === 0) {
+          if (result.rows.length > 0) {
               res.send(400).send('No user');
           } else {
               var dbString = result.row[0].password;
