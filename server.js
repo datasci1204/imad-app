@@ -4,6 +4,7 @@ var path = require('path');
 var Pool = require('pg').Pool; 
 var crypto = require('crypto');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var config = {
    user: 'datasci1204',
@@ -18,6 +19,10 @@ var config = {
 var app = express();
 app.use(morgan('combined'));
 app.use(bodyParser.json());
+app.use(session({
+secret: 'Loggedin',
+cookie: {maxage:  1000*60}}    
+));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -79,7 +84,8 @@ app.post('/testdb', function(req, res){
               var salt = dbString.split('$')[2];
               var hashedPassword = hash(password,salt);
               if(hashedPassword === dbString) {
-                  res.send(600).res.send('User Valid');
+                  req.session.auth = {userId: result.row[0].id};
+                  
               }else {
                   res.send(403).send('username/password is not valid');
               }
@@ -93,8 +99,13 @@ app.post('/testdb', function(req, res){
     
 var counter = 0;
 app.get('/login', function (req, res) {
+    
+    if(req.session && req.session.auth && req.session.auth.userId) {
     counter = counter + 1;
-    res.send(counter.toString());
+    res.send('You are logged in').res.send(counter.toString());
+    }else {
+        res.send('logged in to Continue').res.send(counter.toString());
+    }
     
 });
 
