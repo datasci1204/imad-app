@@ -102,9 +102,9 @@ app.get('/login', function (req, res) {
     
     if(req.session && req.session.auth && req.session.auth.userId) {
     counter = counter + 1;
-    res.send('You are logged in').send(counter.toString());
+    res.send('You are logged in' + counter.toString());
     }else {
-        res.send('logged in to Continue').send(counter.toString());
+        res.send('logged in to Continue' + counter.toString());
     }
     
 });
