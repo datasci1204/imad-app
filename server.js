@@ -73,6 +73,15 @@ app.post('/testdb', function(req, res){
       } else {
           if (result.rows.length === 0) {
               res.send(400).send('No user');
+          } else {
+              var dbString = result.row[0].password;
+              var salt = dbString.split('$')[2];
+              var hashedPassword = hash(password,salt);
+              if(hashedPassword === dbString) {
+                  res.send('User Valid');
+              }else {
+                  res.send(403).send('username/password is not valid');
+              }
           }
         res.send(JSON.stringify(result));
           
