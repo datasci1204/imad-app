@@ -104,7 +104,7 @@ app.get('/login', function (req, res) {
     counter = counter + 1;
     res.send('You are logged in').send(counter.toString());
     }else {
-        res.send('logged in to Continue').res.send(counter.toString());
+        res.send('logged in to Continue').send(counter.toString());
     }
     
 });
