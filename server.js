@@ -21,7 +21,7 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(session({
 secret: 'Loggedin',
-cookie: {maxage:  1000*60}}    
+cookie: {maxage:  1000*60*60}}    
 ));
 
 app.get('/', function (req, res) {
