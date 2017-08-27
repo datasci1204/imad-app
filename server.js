@@ -79,7 +79,7 @@ app.post('/testdb', function(req, res){
               var salt = dbString.split('$')[2];
               var hashedPassword = hash(password,salt);
               if(hashedPassword === dbString) {
-                  res.send('User Valid');
+                  res.send(600).res.send('User Valid');
               }else {
                   res.send(403).send('username/password is not valid');
               }
